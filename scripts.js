@@ -3,6 +3,7 @@ const form = document.querySelector('#form');
 function Book(title, author) {
   this.title = title;
   this.author = author;
+  this.id = 0;
 }
 
 function record() {
@@ -27,7 +28,7 @@ window.addEventListener('load', () => {
     booklist.innerHTML += `<div class="book">
     <p class="title">${item.title}</p>
     <p class="author">${item.author}</p>
-    <button class="remover">Remove</button>
+    <button id=${arr.indexOf(item)} class="remover">Remove</button>
   </div>`;
   });
 });
