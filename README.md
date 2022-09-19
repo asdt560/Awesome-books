@@ -21,11 +21,11 @@
 - Twitter: [@twitterhandle](https://twitter.com/JustoRago)
 - LinkedIn: [LinkedIn]( www.linkedin.com/in/justo-rago-0714b5208)
 
-👤 **Author2**
+👤 **Alqama saeed**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@smas0900](https://github.com/smas0900)
+- Twitter: [@AlqamaSaeed](https://twitter.com/AlqamaSaeed)
+- LinkedIn: [AlqamaSaeed](linkedin.com/in/alqama-saeed-598086120)
 
 ## 🤝 Contributing
 
