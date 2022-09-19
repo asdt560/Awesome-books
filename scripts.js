@@ -3,7 +3,6 @@ const form = document.querySelector('#form');
 function Book(title, author) {
   this.title = title;
   this.author = author;
-  this.id = 0;
 }
 
 function record() {
@@ -28,10 +27,17 @@ window.addEventListener('load', () => {
     booklist.innerHTML += `<div class="book">
     <p class="title">${item.title}</p>
     <p class="author">${item.author}</p>
-    <button id=${arr.indexOf(item)} class="remover">Remove</button>
-  </div>`;
+    <button id=${arr.indexOf(item)} onclick="deleting(this.id)" class="remover">Remove</button>
+    </div>`;
   });
 });
+// eslint-disable-next-line no-unused-vars
+function deleting(id) {
+  const arr = JSON.parse(window.localStorage.getItem('bookarr'));
+  arr.splice(id, 1);
+  window.localStorage.setItem('bookarr', JSON.stringify(arr));
+  window.location.reload();
+}
 
 form.addEventListener('submit', () => {
   record();
