@@ -1,5 +1,3 @@
-const booklist = document.querySelector('#bookcontainer');
-
 const form = document.querySelector('#form');
 
 function Book(title, author) {
@@ -9,7 +7,6 @@ function Book(title, author) {
 
 function record() {
   let arr = JSON.parse(window.localStorage.getItem('bookarr'));
-  console.info(arr);
   if (arr === null) {
     arr = [];
   }
@@ -25,8 +22,9 @@ function record() {
 window.addEventListener('load', () => {
   const arr = JSON.parse(window.localStorage.getItem('bookarr'));
   console.log(arr);
+  const booklist = document.querySelector('#bookcontainer');
   arr.forEach((item) => {
-    booklist.innerHTML = `<div class="book">
+    booklist.innerHTML += `<div class="book">
     <p class="title">${item.title}</p>
     <p class="author">${item.author}</p>
     <button class="remover">Remove</button>
