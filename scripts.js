@@ -5,18 +5,36 @@ function Book(title, author) {
   this.author = author;
 }
 
-function record() {
-  let arr = JSON.parse(window.localStorage.getItem('bookarr'));
-  if (arr === null) {
-    arr = [];
+class BookList {
+  constructor() {
+    this.container = [];
   }
+
+  add(title, author) {
+    this.container = JSON.parse(window.localStorage.getItem('bookarr'));
+    if (this.container === null) {
+      this.container = [];
+    }
+    const newBook = new Book(title, author);
+    this.container.push(newBook);
+    window.localStorage.setItem('bookarr', JSON.stringify(this.container));
+  }
+
+  remove(id) {
+    this.container = JSON.parse(window.localStorage.getItem('bookarr'));
+    this.container.splice(id, 1);
+    window.localStorage.setItem('bookarr', JSON.stringify(this.container));
+  }
+}
+
+const list = new BookList();
+
+function record() {
   const title = form.querySelector('#title');
   const author = form.querySelector('#author');
   const titlename = title.value;
   const authorname = author.value;
-  const newbook = new Book(titlename, authorname);
-  arr.push(newbook);
-  window.localStorage.setItem('bookarr', JSON.stringify(arr));
+  list.add(titlename, authorname);
 }
 
 window.addEventListener('load', () => {
@@ -25,17 +43,15 @@ window.addEventListener('load', () => {
   const booklist = document.querySelector('#bookcontainer');
   arr.forEach((item) => {
     booklist.innerHTML += `<div class="book">
-    <p class="title">${item.title}</p>
-    <p class="author">${item.author}</p>
+    <p class="title-author">"${item.title}" by ${item.author}</p>
     <button id=${arr.indexOf(item)} onclick="deleting(this.id)" class="remover">Remove</button>
     </div>`;
   });
 });
+
 // eslint-disable-next-line no-unused-vars
 function deleting(id) {
-  const arr = JSON.parse(window.localStorage.getItem('bookarr'));
-  arr.splice(id, 1);
-  window.localStorage.setItem('bookarr', JSON.stringify(arr));
+  list.remove(id);
   window.location.reload();
 }
 
