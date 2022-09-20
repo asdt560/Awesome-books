@@ -1,42 +1,103 @@
 body {
+  height: 99vh;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   padding: 20px;
+  align-items: center;
+  background-image: radial-gradient(white 70%, blue);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+h1 {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: darkblue;
 }
 
 p {
   margin: 0;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 #bookcontainer {
   display: flex;
   flex-direction: column;
+  border: 2px solid blue;
+  border-radius: 5px;
+  width: 60%;
 }
 
 .book {
   display: flex;
-  flex-direction: column;
-  margin: 5px;
-  padding-bottom: 5px;
-  border-bottom: 1px solid grey;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+}
+
+.book:nth-child(2n) {
+  background-color: lightblue;
 }
 
 .remover {
-  align-self: flex-start;
+  border: 2px solid lightblue;
+  border-radius: 5%;
+  font-weight: bold;
+  box-shadow: 3px 3px lightblue;
+  color: blue;
+}
+
+.remover:hover {
+  border: 2px solid grey;
+  background: blue;
+  color: white;
+}
+
+.divider {
+  margin: 20px;
+  border: 1px solid black;
+  width: 20%;
+  border-radius: 20%;
+}
+
+.sectiontitle {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  margin: 5px;
+  align-self: center;
+  color: darkblue;
+}
+
+#formcontainer {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
 }
 
 #form {
   display: flex;
   flex-direction: column;
-  width: 200px;
   justify-content: space-between;
 }
 
 .formelement {
   margin: 5px;
+  border: 2px solid blue;
+  border-radius: 5%;
+  background-color: lightblue;
 }
 
 #button {
-  align-self: flex-start;
+  align-self: flex-end;
+  border-radius: 20%;
+  color: blue;
+}
+
+#button:hover {
+  background-color: blue;
+  color: white;
+}
+
+::placeholder {
+  color: blue;
+  opacity: 0.7;
 }
