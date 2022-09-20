@@ -1,0 +1,42 @@
+body {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+p {
+  margin: 0;
+}
+
+#bookcontainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.book {
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid grey;
+}
+
+.remover {
+  align-self: flex-start;
+}
+
+#form {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  justify-content: space-between;
+}
+
+.formelement {
+  margin: 5px;
+}
+
+#button {
+  align-self: flex-start;
+}
