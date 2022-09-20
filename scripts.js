@@ -39,7 +39,6 @@ function record() {
 
 window.addEventListener('load', () => {
   const arr = JSON.parse(window.localStorage.getItem('bookarr'));
-  console.log(arr);
   const booklist = document.querySelector('#bookcontainer');
   arr.forEach((item) => {
     booklist.innerHTML += `<div class="book">
@@ -57,4 +56,43 @@ function deleting(id) {
 
 form.addEventListener('submit', () => {
   record();
+});
+
+const listnav = document.querySelector('#listnav');
+const listsection = document.querySelector('#listsection');
+
+const addnav = document.querySelector('#addnav');
+const formsection = document.querySelector('#formsection');
+
+const contactnav = document.querySelector('#contactnav');
+const contactsection = document.querySelector('#contactsection');
+
+listnav.addEventListener('click', () => {
+  listsection.style.display = 'flex';
+  listnav.style.cssText = `color: blue;
+  cursor: auto;`;
+  formsection.style.display = 'none';
+  addnav.style.cssText = 'color: black; cursor: pointer;';
+  contactsection.style.display = 'none';
+  contactnav.style.cssText = 'color: black; cursor: pointer;';
+});
+
+addnav.addEventListener('click', () => {
+  formsection.style.display = 'flex';
+  addnav.style.cssText = `color: blue;
+  cursor: auto;`;
+  listsection.style.display = 'none';
+  listnav.style.cssText = 'color: black; cursor: pointer;';
+  contactsection.style.display = 'none';
+  contactnav.style.cssText = 'color: black; cursor: pointer;';
+});
+
+contactnav.addEventListener('click', () => {
+  contactsection.style.display = 'flex';
+  contactnav.style.cssText = `color: blue;
+  cursor: auto;`;
+  listsection.style.display = 'none';
+  listnav.style.cssText = 'color: black; cursor: pointer;';
+  formsection.style.display = 'none';
+  addnav.style.cssText = 'color: black; cursor: pointer;';
 });

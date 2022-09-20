@@ -8,6 +8,7 @@ body {
   background-image: radial-gradient(white 70%, blue);
   background-repeat: no-repeat;
   background-size: cover;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 h1 {
@@ -48,18 +49,20 @@ p {
   background: none;
   border: none;
   font-weight: 600;
-  border-right: 2px solid black;
+  border-left: 2px solid black;
 }
 
-.navitem:last-child {
-  border-right: none;
+.navitem:first-child {
+  border-left: none;
+  color: blue;
+  cursor: auto;
 }
 
 .navitem:hover {
   color: blue;
 }
 
-#main {
+#listsection {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -112,7 +115,7 @@ p {
   color: darkblue;
 }
 
-#formcontainer {
+#formsection {
   width: 100%;
   display: none;
   flex-direction: column;
@@ -154,6 +157,15 @@ p {
 
 button {
   cursor: pointer;
+}
+
+#contactsection {
+  display: none;
+  flex-direction: column;
+}
+
+.contact {
+  line-height: 22px;
 }
 
 #footer {
